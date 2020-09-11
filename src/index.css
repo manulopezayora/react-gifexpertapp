@@ -1,17 +1,48 @@
+:root {
+  --main-bg-color: #fff;
+  --gradient-left-color: #92ffc0;
+  --gradient-right-color: #002661;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
   font-family: Helvetica, Arial, sans-serif;
-  padding: 60px;
+  background-color: var(--main-bg-color);
+  text-align: center;
+}
+
+.title {
+  display: inline-block;
+  color: #000;
+  background: #fff;
+  mix-blend-mode: multiply;
+  position: relative;
+}
+
+.title:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    var(--gradient-left-color),
+    var(--gradient-right-color)
+  );
+  mix-blend-mode: screen;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 input {
   color: gray;
   font-size: 1.2rem;
   outline-color: royalblue;
-  width: 100%;
+  width: 200px;
 }
 
 .card-grid {
@@ -25,18 +56,14 @@ input {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: gainsboro;
-  border-radius: 6px;
-  border: 1px solid gray;
-  margin-left: 10px;
-  margin-bottom: 10px;
   overflow: hidden;
-  padding: 10px;
   height: auto;
+  margin: 5px;
 }
 
 .card__img {
   max-width: 100%;
+  height: 200px;
 }
 
 .spinner-box {
